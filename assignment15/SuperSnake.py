@@ -51,6 +51,7 @@ class Game(arcade.Window):
 
         elif arcade.check_for_collision(self.snake, self.feces):
             if self.snake.score > 0:
+                del self.feces
                 self.snake.score -= 1
                 self.feces = Feces(self)
             if self.snake.score <= 0:
